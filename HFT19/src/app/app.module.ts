@@ -1,3 +1,4 @@
+import { AccountService } from './services/account.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
@@ -30,7 +31,7 @@ import { UserComponent } from './banks/bank/accounts/user/user.component';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [AccountService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

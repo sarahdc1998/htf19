@@ -10,13 +10,13 @@ import {map, tap, take, exhaust, exhaustMap} from 'rxjs/operators';
   providedIn: 'root'
 })
 export class DataService {
-  baseUrl = 'https://htf.zinderlabs.com/';
+  baseUrl = 'https://htf.zinderlabs.com';
   token = '915e69a1245cfac52524f58fa9f6c9e7';
 
   constructor(private http: HttpClient, private router: Router, private accountsService: AccountService) { }
 
   public getBanks() {
-    return this.http.get(`${this.baseUrl}/banks`, { headers: { Authorization: `Bearer ${this.token}` }});
+    return this.http.get(`${this.baseUrl}/banks`, { headers: { Authorization: `${this.token}` }});
   }
 
   public getBank(nameBank) {
@@ -27,7 +27,7 @@ export class DataService {
     // this.http.get(`${this.baseUrl}/${nameBank}/accounts`, { headers: { Authorization: `Bearer ${this.token}` }});
     return this.http.get<User[]>(
       `${this.baseUrl}/${nameBank}/accounts`,
-      { headers: { Authorization: `Bearer ${this.token}` }}
+      { headers: { Authorization: `${this.token}` }}
     ).pipe(
       tap(users => {
         this.accountsService.setUsers(users);
