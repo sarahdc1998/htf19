@@ -1,10 +1,14 @@
-<div class="container-fluid mt-5">
-
-<div class="card">
-  <div class="card-header">All banks <button class="right" data-toggle="modal" data-target="#sortModal"><i class="fas fa-sort text-right"></i></button>
-  <ul class="list-group">
-   <app-bank *ngFor="let bank of banks" [items] = bank></app-bank>
-  </ul>
+<div class="container">
+  <div class="row">
+    <div class="card">
+      <h5 class="card-header">All banks</h5>
+      <div class="card-body">
+        <ul class="list-group">
+          <app-bank *ngFor="let bank of banks" [items] = bank></app-bank>
+        </ul>
+      </div>
+    </div>
+  </div>
 </div>
 
 <!-- sortModal -->
@@ -23,4 +27,4 @@
     </div>
   </div>
 </div>
-</div>
+

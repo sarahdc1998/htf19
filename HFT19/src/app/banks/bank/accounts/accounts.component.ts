@@ -9,15 +9,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./accounts.component.css']
 })
 export class AccountsComponent implements OnInit {
-  bankName = 'caymannationalbank';
+  bankName = "caymannationalbank";
   users: User[] = [];
 
-  constructor(private dataService: DataService) { }
+  constructor(private dataService: DataService, private accountsService: AccountService) { }
 
   ngOnInit() {
-    this.dataService.getUsers(this.bankName).subscribe(users => {
-      this.users = users.result;
-    });
+    this.dataService.getUsers(this.bankName);
+    this.users = this.accountsService.getUsers();
   }
 
 }

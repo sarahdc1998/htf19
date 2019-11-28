@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, Output} from '@angular/core';
 import {Bank} from "../../models/bank.model";
 
 @Component({
@@ -14,5 +14,4 @@ export class BankComponent implements OnInit {
   }
 
  @Input() items: Bank;
-
 }

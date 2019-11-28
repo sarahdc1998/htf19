@@ -1,1 +1,1 @@
-<li class="list-group-item">{{ items.name }} <button type="button" class="btn btn-light" [routerLink]="['/banks', items.name.trim()]">View</button></li>
+<li class="list-group-item">{{ items.name }}<button type="button" class="btn btn-success"  [routerLink]="['/banks', items.name.trim()]" [state]="{item: items.name}">View</button></li>
