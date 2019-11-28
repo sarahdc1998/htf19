@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {DataService} from "../services/data.service";
+import {Observable} from "rxjs";
+import {Bank} from "../models/bank.model";
 
 @Component({
   selector: 'app-banks',
@@ -7,11 +9,14 @@ import {DataService} from "../services/data.service";
   styleUrls: ['./banks.component.css']
 })
 export class BanksComponent implements OnInit {
-
-  constructor(private  dataService: DataService) { }
+  banks: any[] = [];
+  constructor(private dataService: DataService) { }
 
   ngOnInit() {
-    this.dataService.getBanks();
+    this.dataService.getBanks().subscribe(banks => {
+        this.banks = banks;
+      }
+    );
   }
 
 }

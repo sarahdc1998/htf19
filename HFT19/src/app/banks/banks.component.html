@@ -1,3 +1,3 @@
 <ul class="list-group">
-  <li class="list-group-item"  *ngFor="let bank of dataService.getBanks()">{{bank.name}} </li>
+  <app-bank *ngFor="let bank of banks" [items] = bank></app-bank>
 </ul>

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Router} from "@angular/router";
+import {Bank} from "../models/bank.model";
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,7 @@ export class DataService {
   constructor(private http: HttpClient, private router: Router) { }
 
   public getBanks() {
-    return this.http.get(`${this.baseUrl}/banks`, { headers: { Authorization: `Bearer ${this.token}` }});
+    return this.http.get<Bank[]>(`${this.baseUrl}/banks`, { headers: { Authorization: `Bearer ${this.token}` }});
   }
 
   public getBank(nameBank) {

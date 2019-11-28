@@ -22,7 +22,7 @@ import { UserComponent } from './banks/bank/accounts/user/user.component';
     TransactionsComponent,
     TransactionComponent,
     HeaderComponent,
-    UserComponent
+    UserComponent,
   ],
   imports: [
     BrowserModule,
