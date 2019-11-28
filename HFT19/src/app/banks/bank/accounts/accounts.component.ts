@@ -1,3 +1,4 @@
+import { DataService } from './../../../services/data.service';
 import { User } from './../../../models/user.model';
 import { AccountService } from './../../../services/account.service';
 import { Component, OnInit } from '@angular/core';
@@ -8,11 +9,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./accounts.component.css']
 })
 export class AccountsComponent implements OnInit {
+  bankName = "caymannationalbank";
   users: User[] = [];
 
-  constructor(private accountsService: AccountService) { }
+  constructor(private dataService: DataService, private accountsService: AccountService) { }
 
   ngOnInit() {
+    this.dataService.getUsers(this.bankName);
     this.users = this.accountsService.getUsers();
   }
 

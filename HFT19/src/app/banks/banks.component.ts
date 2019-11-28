@@ -9,14 +9,14 @@ import {Bank} from "../models/bank.model";
   styleUrls: ['./banks.component.css']
 })
 export class BanksComponent implements OnInit {
-  banks: any[] = [];
+  // banks: any[] = [];
   constructor(private dataService: DataService) { }
 
   ngOnInit() {
-    this.dataService.getBanks().subscribe(banks => {
-        this.banks = banks;
-      }
-    );
+    // this.dataService.getBanks().subscribe(banks => {
+    //     this.banks = banks;
+    //   }
+    // );
   }
 
 }
