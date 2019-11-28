@@ -12,17 +12,16 @@ import 'rxjs/Rx';
 })
 export class BankDetailComponent implements OnInit {
   bankName;
-  bank: Bank;
+  bank: any;
 
   constructor(private dataService: DataService, private router: ActivatedRoute) { }
 
   ngOnInit() {
     this.router.params.subscribe(params => {
-     this.bankName =  params['name'];
+      this.bankName = params['name'];
 
       this.dataService.getBank(this.bankName.replace(/\s/g, "")).subscribe(bank => {
         this.bank = bank;
-        console.log(this.bank);
       });
     });
 

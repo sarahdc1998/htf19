@@ -9,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./accounts.component.css']
 })
 export class AccountsComponent implements OnInit {
-  bankName = 'caymannationalbank';
+  bankName = "caymannationalbank";
   users: User[] = [];
 
   constructor(private dataService: DataService, private accountsService: AccountService) { }

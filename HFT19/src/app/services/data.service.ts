@@ -21,7 +21,7 @@ export class DataService {
   }
 
   public getBank(nameBank) {
-    return this.http.get<Bank>(`${this.baseUrl}/${nameBank}`, { headers: { Authorization: `${this.token}` }});
+    return this.http.get<any>(`${this.baseUrl}/${nameBank}`, { headers: { Authorization: `${this.token}` }});
   }
 
   public getUsers(nameBank) {
