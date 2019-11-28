@@ -9,7 +9,7 @@ import { User } from 'src/app/models/user.model';
 })
 export class UserComponent implements OnInit {
   bankName = 'caymannationalbank';
-  userId: string;
+  userId = '3c5cc172-d0ee-4e29-b3a3-a0f7101216f4';
   user: User;
 
   constructor(private dataService: DataService) { }
