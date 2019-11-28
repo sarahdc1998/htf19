@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Router} from '@angular/router';
 import {map, tap, take, exhaust, exhaustMap} from 'rxjs/operators';
-import {Bank} from "../models/bank.model";
+import {Bank} from '../models/bank.model';
 
 @Injectable({
   providedIn: 'root'
@@ -26,7 +26,7 @@ export class DataService {
 
   public getUsers(nameBank) {
     // this.http.get(`${this.baseUrl}/${nameBank}/accounts`, { headers: { Authorization: `Bearer ${this.token}` }});
-    return this.http.get<User[]>(
+    return this.http.get<any>(
       `${this.baseUrl}/${nameBank}/accounts`,
       { headers: { Authorization: `${this.token}` }}
     );
@@ -37,8 +37,11 @@ export class DataService {
     // );
   }
 
-  public  getUser(id) {
-
+  public  getUser(nameBank, id) {
+    return this.http.get<any>(
+      `${this.baseUrl}/${nameBank}/accounts/${id}`,
+      { headers: { Authorization: `${this.token}` }}
+    );
   }
 
   public getTransactions(nameBank) {

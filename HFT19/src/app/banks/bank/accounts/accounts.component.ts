@@ -16,12 +16,8 @@ export class AccountsComponent implements OnInit {
 
   ngOnInit() {
     this.dataService.getUsers(this.bankName).subscribe(users => {
-      this.users = users;
+      this.users = users.result;
     });
-  }
-
-  onShow() {
-    console.log(this.users);
   }
 
 }

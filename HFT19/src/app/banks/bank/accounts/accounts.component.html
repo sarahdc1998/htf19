@@ -1,7 +1,7 @@
-<div>
-  <button (click)="onShow()">Show</button>
-  <div *ngFor="let user of users">
-    <p>{{ user.firstName }}</p>
-    <p>{{ user.lastName }}</p>
+<div class="col-xs-12">
+  <div *ngFor="let user of users" >
+    <ul>
+      <li class="list-group-item">{{ user.firstName }} {{ user.lastName }}</li>
+    </ul>
   </div>
 </div>
