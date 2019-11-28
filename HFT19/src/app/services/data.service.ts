@@ -12,19 +12,23 @@ export class DataService {
   constructor(private http: HttpClient, private router: Router) { }
 
   public getBanks() {
-    this.http.get(`${this.baseUrl}/banks`, { headers: { Authorization: `Bearer ${this.token}` }});
+    return this.http.get(`${this.baseUrl}/banks`, { headers: { Authorization: `Bearer ${this.token}` }});
   }
 
-  public getBank(id) {
-
+  public getBank(nameBank) {
+    this.http.get(`${this.baseUrl}/${nameBank}`, { headers: { Authorization: `Bearer ${this.token}` }});
   }
 
-  public getAccounts() {
-
+  public getAccounts(nameBank) {
+    this.http.get(`${this.baseUrl}/${nameBank}/accounts`, { headers: { Authorization: `Bearer ${this.token}` }});
   }
 
   public  getAccount(id) {
 
+  }
+
+  public getTransactions(nameBank) {
+    this.http.get(`${this.baseUrl}/${nameBank}/transactions`, { headers: { Authorization: `Bearer ${this.token}` }});
   }
 }
 

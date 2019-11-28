@@ -6,10 +6,11 @@ import { AppComponent } from './app.component';
 import { BanksComponent } from './banks/banks.component';
 import { BankComponent } from './banks/bank/bank.component';
 import { AccountsComponent } from './banks/bank/accounts/accounts.component';
-import { AccountComponent } from './banks/bank/accounts/account/account.component';
-import { TransactionsComponent } from './banks/bank/transactions/transactions.component';
-import { TransactionComponent } from './banks/bank/transactions/transaction/transaction.component';
+import { AccountComponent } from './banks/bank/accounts/user/account/account.component';
+import { TransactionsComponent } from './banks/bank/accounts/user/account/transactions/transactions.component';
+import { TransactionComponent } from './banks/bank/accounts/user/account/transactions/transaction/transaction.component';
 import { HeaderComponent } from './header/header.component';
+import { UserComponent } from './banks/bank/accounts/user/user.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { HeaderComponent } from './header/header.component';
     AccountComponent,
     TransactionsComponent,
     TransactionComponent,
-    HeaderComponent
+    HeaderComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
