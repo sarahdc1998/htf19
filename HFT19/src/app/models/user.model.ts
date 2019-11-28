@@ -1,3 +1,4 @@
+import { Login } from './login.model';
 import { Account } from './account.model';
 
 export class User {
@@ -7,20 +8,18 @@ export class User {
   public gender: string;
   public nationality: string;
   public birthday: string;
-  public username: string;
-  public hashedPassword: string;
+  public login: Login;
   public account: Account;
 
   constructor(id: string, firstName: string, lastName: string, gender: string, nationality: string,
-              birthday: string, username: string, hashedPassword: string, account: Account) {
+              birthday: string, login: Login, account: Account) {
     this.id = id;
     this.firstName = firstName;
     this.lastName = lastName;
     this.gender = gender;
     this.nationality = nationality;
     this.birthday = birthday;
-    this.username = username;
-    this.hashedPassword = hashedPassword;
+    this.login = login;
     this.account = account;
   }
 }

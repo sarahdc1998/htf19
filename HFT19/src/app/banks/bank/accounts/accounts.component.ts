@@ -12,13 +12,16 @@ export class AccountsComponent implements OnInit {
   bankName = 'caymannationalbank';
   users: User[] = [];
 
-  constructor(private dataService: DataService, private accountsService: AccountService) { }
+  constructor(private dataService: DataService) { }
 
   ngOnInit() {
-    this.dataService.getUsers(this.bankName).subscribe();
-    // this.users = this.accountsService.getUsers();
+    this.dataService.getUsers(this.bankName).subscribe(users => {
+      this.users = users;
+    });
+  }
 
-    console.log(this.accountsService.getUsers());
+  onShow() {
+    console.log(this.users);
   }
 
 }

@@ -29,11 +29,12 @@ export class DataService {
     return this.http.get<User[]>(
       `${this.baseUrl}/${nameBank}/accounts`,
       { headers: { Authorization: `${this.token}` }}
-    ).pipe(
-      tap(users => {
-        this.accountsService.setUsers(users);
-      })
     );
+    // .pipe(
+    //   tap(users => {
+    //     this.accountsService.setUsers(users);
+    //   })
+    // );
   }
 
   public  getUser(id) {
