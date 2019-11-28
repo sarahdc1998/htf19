@@ -13,6 +13,7 @@ import { TransactionsComponent } from './banks/bank/accounts/user/account/transa
 import { TransactionComponent } from './banks/bank/accounts/user/account/transactions/transaction/transaction.component';
 import { HeaderComponent } from './header/header.component';
 import { UserComponent } from './banks/bank/accounts/user/user.component';
+import { BankDetailComponent } from './banks/bank/bank-detail/bank-detail.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { UserComponent } from './banks/bank/accounts/user/user.component';
     TransactionComponent,
     HeaderComponent,
     UserComponent,
+    BankDetailComponent,
   ],
   imports: [
     BrowserModule,
